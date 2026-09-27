@@ -1,23 +1,21 @@
-# CHIVA Vision — démonstration iPhone
+# CHIVA Vision 1.0 — démo iPhone
 
-Ouvrir la version actuelle : **https://nord1g691.github.io/C.H.I.V.A/?v=09**
+**Ouvrir CHIVA dans Safari :** https://nord1g691.github.io/C.H.I.V.A/?v=10
 
-## Version 0.9 : Vision
+### Tester le nouveau suivi visuel
 
-- Affichage **caméra arrière réelle** (avec autorisation explicite Safari, sur une adresse HTTPS).
-- Mode salon fictif si l'accès à la caméra est refusé.
-- Repères **2D déplaçables** sur télévision, climatiseur, lumières et volets ; ajout de piscine et portail.
-- Actions de démonstration : télécommande TV (gauche/droite/haut/bas/OK, volume, chaîne), consigne de clim, luminosité et couleurs, position des volets, température piscine.
-- Confirmation avant toute **simulation** de l'ouverture du portail.
-- Écran de montre **simulé sur iPhone**, avec gestes tactiles et directionnels ; scénarios cinéma, solaire et nuit.
-- Les repères personnalisés sont mémorisés localement dans Safari, lorsque son stockage est autorisé.
+1. Sur l'iPhone, ouvrir la page directement dans Safari, puis **Essayer avec ma caméra** et autoriser la caméra arrière.
+2. Pointer la télévision ou la clim. **Maintenir et déplacer** son repère jusqu'à l'objet (ou ajouter un nouvel appareil), puis le toucher.
+3. Appuyer sur **◎ Fixer sur cet objet**. Un symbole 🔒 indique que le suivi a réussi.
+4. Déplacer **doucement** l'iPhone de quelques dizaines de centimètres : le repère doit suivre l'objet dans l'image.
+5. Si le repère indique **⚠ PERDU**, revenir vers l'objet et appuyer à nouveau sur **Fixer**.
 
-**Important :** c'est une démo **sans connexion domotique réelle**. Les repères 2D restent à leur position sur l'écran et **ne suivent pas encore les objets dans l'espace**. Pas de reconnaissance automatique, pas de véritable application Apple Watch ni de commande réelle. L'ARKit, les connexions HomeKit/Home Assistant/Tuya et les capteurs de la montre nécessitent une future version native testée sur appareil.
+Le suivi est **local et expérimental** : il utilise de petits détails visuels de l'image de la caméra. Un mur uniforme, un écran noir, des mouvements rapides, des changements d'angle ou une faible lumière peuvent interrompre le suivi. Les images et les motifs recherchés ne sont pas sauvegardés ni envoyés à CHIVA. La caméra n'est activée qu'avec l'autorisation de l'utilisateur. Les boutons ne commandent encore aucun appareil réel.
 
-La caméra reste locale ; aucune image ni aucun identifiant n'est envoyé à CHIVA. Ne jamais saisir ses identifiants Home Assistant sur un prototype public.
+Les **positions 2D** personnalisées peuvent être conservées dans Safari, mais ne constituent pas une carte 3D. Quand la caméra est fermée ou qu'on revient plus tard, le verrouillage visuel doit être refait. Pour des repères réellement fixes dans l'espace **et retrouvables entre les sessions**, il faut la future application iOS native avec **ARKit + ARAnchor + ARWorldMap** et une relocalisation réussie sur place.
 
-Ancienne démo : [demo-classique.html](demo-classique.html).
+Ancienne démo : [demo-classique.html](demo-classique.html). Dépôt CHIVA indépendant de Jarvis V3.
 
-## Hébergement GitHub Pages
+### GitHub Pages
 
-Dans [Settings → Pages](https://github.com/Nord1g691/C.H.I.V.A/settings/pages), publier `main` depuis `/(root)`. Le dépôt CHIVA est indépendant du dépôt Jarvis V3.
+[Settings → Pages](https://github.com/Nord1g691/C.H.I.V.A/settings/pages) → Deploy from a branch → main → /(root). Un déploiement peut prendre quelques minutes. Version 1.0 : index.html + tracking.js, sans dépendance externe.
