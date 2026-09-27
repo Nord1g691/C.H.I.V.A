@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1">
 <meta name="theme-color" content="#061019"><meta name="description" content="CHIVA Vision : une expérience de maison connectée à essayer depuis Safari, en simulation.">
-<title>CHIVA Vision · Démo iPhone</title>
+<title>CHIVA Vision 1.0 · Suivi caméra iPhone</title>
 <style>
 :root{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Arial,sans-serif;color:#edf9fa;background:#060d14;font-synthesis:none}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}body{margin:0;min-height:100dvh;background:radial-gradient(ellipse at 55% 1%,#173945 0%,#07131d 37%,#050a10 70%);display:flex;justify-content:center}
@@ -82,7 +82,7 @@ header{height:71px;display:flex;align-items:center;justify-content:space-between
 <div id="controls"></div>
 </div>
 <div class="stage-bottom"><button class="fab alt" id="reset">↺ Repères</button><button class="fab" id="add">＋ Ajouter un appareil</button></div>
-<div class="welcome" id="welcome"><div class="eyebrow">CHIVA VISION · V0.9</div><h2>Ta maison,<br>sans télécommande.</h2><p>Active la caméra de ton iPhone pour superposer des commandes à ce que tu vois. Place les repères sur les objets puis fixe-les pour les suivre lorsque tu bouges doucement. Le suivi visuel peut se perdre si tu tournes trop vite.</p><div class="steps"><b>① Vise<br>un appareil</b><b>② Place<br>son repère</b><b>③ Touche<br>pour régler</b></div><button class="primary-btn" id="start-camera">◉ Essayer avec ma caméra</button><button class="secondary-btn" id="start-demo">Voir la démo sans caméra →</button><p style="font-size:10px;color:#80aaa8">Images traitées sur ton iPhone, sans envoi vers un serveur CHIVA. Ce prototype ne reconnaît pas encore les objets et ne commande aucun appareil réel.</p></div>
+<div class="welcome" id="welcome"><div class="eyebrow">CHIVA VISION · V1.0</div><h2>Ta maison,<br>sans télécommande.</h2><p>Active la caméra de ton iPhone pour superposer des commandes à ce que tu vois. Place les repères sur les objets puis fixe-les pour les suivre lorsque tu bouges doucement. Le suivi visuel peut se perdre si tu tournes trop vite.</p><div class="steps"><b>① Vise<br>un appareil</b><b>② Place<br>son repère</b><b>③ Touche<br>pour régler</b></div><button class="primary-btn" id="start-camera">◉ Essayer avec ma caméra</button><button class="secondary-btn" id="start-demo">Voir la démo sans caméra →</button><p style="font-size:10px;color:#80aaa8">Images traitées sur ton iPhone, sans envoi vers un serveur CHIVA. Ce prototype ne reconnaît pas encore les objets et ne commande aucun appareil réel.</p></div>
 <div class="confirm" id="confirm"><div class="confirm-inner"><div style="font-size:36px">⚠</div><h2>Confirmer le portail ?</h2><p>Dans cette démonstration, seule l'animation change. Aucun appareil n'est commandé.</p><div class="cmds"><button class="cmd" id="confirm-no">Annuler</button><button class="cmd primary" id="confirm-yes">Confirmer</button></div></div></div>
 </div>
 <div class="camera-prompt" id="camera-prompt">La caméra n'a pas démarré. Tu peux quand même essayer toutes les commandes dans la pièce fictive. Dans Safari, autorise l'accès à la caméra depuis un site HTTPS.</div>
