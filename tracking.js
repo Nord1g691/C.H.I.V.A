@@ -38,14 +38,27 @@
   }
   function bestMatch(frame,patch,aroundX,aroundY,radius) {
     var x0=clamp(Math.round(aroundX),0,frame.width-1),y0=clamp(Math.round(aroundY),0,frame.height-1);
-    var best={score:-2,x:x0,y:y0};
-    for(var yy=y0-radius;yy<=y0+radius;yy+=4)for(var xx=x0-radius;xx<=x0+radius;xx+=4){
-      var s=scoreAt(frame,patch,xx,yy);
-      if(s>best.score)best={score:s,x:xx,y:yy};
+    var best={score:-2,x:x0,y:y0}, near=Math.min(radius,14);
+    for(var yy=y0-near;yy<=y0+near;yy++)for(var xx=x0-near;xx<=x0+near;xx++){
+      var s=scoreAt(frame,patch,xx,yy);if(s>best.score)best={score:s,x:xx,y:yy};
     }
-    var rough=best;
-    for(var y=rough.y-4;y<=rough.y+4;y++)for(var x=rough.x-4;x<=rough.x+4;x++){
-      var z=scoreAt(frame,patch,x,y);if(z>best.score)best={score:z,x:x,y:y};
+    if(best.score>0.77||radius<=near)return best;
+    var leaders=[];
+    for(var y=y0-radius;y<=y0+radius;y+=4)for(var x=x0-radius;x<=x0+radius;x+=4){
+      var z=scoreAt(frame,patch,x,y);if(z>best.score)leaders.push({score:z,x:x,y:y});
+    }
+    leaders.sort(function(a,b){return b.score-a.score;});
+    leaders=leaders.slice(0,12);
+    for(var k=0;k<leaders.length;k++){
+      var p=leaders[k];
+      for(var cy=p.y-4;cy<=p.y+4;cy++)for(var cx=p.x-4;cx<=p.x+4;cx++){
+        var m=scoreAt(frame,patch,cx,cy);if(m>best.score)best={score:m,x:cx,y:cy};
+      }
+    }
+    if(radius>=45&&best.score<0.72){
+      for(var sy=y0-radius;sy<=y0+radius;sy++)for(var sx=x0-radius;sx<=x0+radius;sx++){
+        var q=scoreAt(frame,patch,sx,sy);if(q>best.score)best={score:q,x:sx,y:sy};
+      }
     }
     return best;
   }
