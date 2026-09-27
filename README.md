@@ -1,27 +1,23 @@
-# CHIVA — Control Home Intelligent Vision Assistant
+# CHIVA Vision — démonstration iPhone
 
-Prototype **indépendant de Jarvis**, pensé pour l'iPhone, puis l'Apple Watch et, plus tard, les lunettes connectées.
+Ouvrir la version actuelle : **https://nord1g691.github.io/C.H.I.V.A/?v=09**
 
-## Démonstration Safari
+## Version 0.9 : Vision
 
-Ouvrir [CHIVA](https://nord1g691.github.io/C.H.I.V.A/) après activation de GitHub Pages.
+- Affichage **caméra arrière réelle** (avec autorisation explicite Safari, sur une adresse HTTPS).
+- Mode salon fictif si l'accès à la caméra est refusé.
+- Repères **2D déplaçables** sur télévision, climatiseur, lumières et volets ; ajout de piscine et portail.
+- Actions de démonstration : télécommande TV (gauche/droite/haut/bas/OK, volume, chaîne), consigne de clim, luminosité et couleurs, position des volets, température piscine.
+- Confirmation avant toute **simulation** de l'ouverture du portail.
+- Écran de montre **simulé sur iPhone**, avec gestes tactiles et directionnels ; scénarios cinéma, solaire et nuit.
+- Les repères personnalisés sont mémorisés localement dans Safari, lorsque son stockage est autorisé.
 
-La version présente dans `index.html` est une démonstration interactive **entièrement simulée** : télécommande TV avec flèches et OK, éclairages, climatisation, volets et confirmation d'ouverture du portail. Aucune commande n'est envoyée à un équipement réel. Aucun jeton, adresse Home Assistant ou identifiant personnel n'est inclus.
+**Important :** c'est une démo **sans connexion domotique réelle**. Les repères 2D restent à leur position sur l'écran et **ne suivent pas encore les objets dans l'espace**. Pas de reconnaissance automatique, pas de véritable application Apple Watch ni de commande réelle. L'ARKit, les connexions HomeKit/Home Assistant/Tuya et les capteurs de la montre nécessitent une future version native testée sur appareil.
 
-## Activer GitHub Pages
+La caméra reste locale ; aucune image ni aucun identifiant n'est envoyé à CHIVA. Ne jamais saisir ses identifiants Home Assistant sur un prototype public.
 
-1. Ouvrir [Settings → Pages](https://github.com/Nord1g691/C.H.I.V.A/settings/pages).
-2. Sous **Build and deployment**, choisir **Deploy from a branch**.
-3. Sélectionner `main`, dossier `/(root)`, puis cliquer sur **Save**.
-4. Attendre la publication par GitHub puis ouvrir **https://nord1g691.github.io/C.H.I.V.A/** dans Safari. L'URL ne fonctionne qu'après publication.
+Ancienne démo : [demo-classique.html](demo-classique.html).
 
-> Ne pas saisir d'identifiants Home Assistant ou Tuya dans cette démonstration publique. Le futur contrôle réel sera intégré à une application dotée d'un stockage sécurisé des identifiants.
+## Hébergement GitHub Pages
 
-## Projet à venir
-
-- iOS : caméra, repères AR et associations d'appareils.
-- watchOS : télécommande TV et calibrage expérimental du poignet.
-- Écosystèmes : Apple Home (HomeKit), Home Assistant et Tuya/Smart Life selon disponibilité des API.
-- Sécurité : confirmations explicites pour portail, garage et autres accès sensibles.
-
-Ce dépôt hébergera uniquement CHIVA. Le projet Jarvis V3 reste distinct.
+Dans [Settings → Pages](https://github.com/Nord1g691/C.H.I.V.A/settings/pages), publier `main` depuis `/(root)`. Le dépôt CHIVA est indépendant du dépôt Jarvis V3.
